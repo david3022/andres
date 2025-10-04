@@ -1,0 +1,183 @@
+---
+
+---
+
+<section class="bg-[#f5f1e9] px-6 sm:px-12">
+  <div class="relative max-w-5xl mx-auto rounded-lg">
+    <!-- Imagen decorativa posicionada correctamente -->
+    <div class="absolute top-0 right-0 w-48 h-36 overflow-hidden">
+      <img
+        src="/circle.png"
+        alt="Decorative semicircle"
+        class="w-full h-auto opacity-80"
+      />
+    </div>
+
+    <!-- Título -->
+    <h2 class="text-2xl sm:text-3xl font-semibold py-12 text-gray-800 mb-8">
+      Tell Us About Your Project
+    </h2>
+
+    <!-- Formulario -->
+    <form class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1"
+          >First Name</label
+        >
+        <input
+          type="text"
+          name="firstName"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1"
+          >Last Name</label
+        >
+        <input
+          type="text"
+          name="lastName"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label
+        >
+        <input
+          type="email"
+          name="email"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label
+        >
+        <input
+          type="tel"
+          name="phone"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        />
+      </div>
+      <div class="sm:col-span-2">
+        <label class="block text-sm font-medium text-gray-700 mb-1"
+          >Address</label
+        >
+        <input
+          type="text"
+          name="address"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1"
+          >Zip Code</label
+        >
+        <input
+          type="text"
+          name="zip"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">City</label>
+        <input
+          type="text"
+          name="city"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        />
+      </div>
+
+      <!-- Campos adicionales -->
+      <div class="mt-8">
+        <!-- Tipo de proyecto -->
+        <fieldset class="mb-6">
+          <legend class="text-sm font-medium text-gray-700 mb-2"
+            >Type of Project *</legend
+          >
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <label class="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="projectType"
+                value="Kitchen"
+                class="form-checkbox text-yellow-500 h-5 w-5"
+              />
+              <span class="ml-2 text-gray-700">Kitchen</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="projectType"
+                value="Bathroom"
+                class="form-checkbox text-yellow-500 h-5 w-5"
+              />
+              <span class="ml-2 text-gray-700">Bathroom</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="projectType"
+                value="Fireplace"
+                class="form-checkbox text-yellow-500 h-5 w-5"
+              />
+              <span class="ml-2 text-gray-700">Fireplace</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="projectType"
+                value="Others"
+                class="form-checkbox text-yellow-500 h-5 w-5"
+              />
+              <span class="ml-2 text-gray-700">Others</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Comentarios -->
+        <div class="mb-6">
+          <label
+            for="comments"
+            class="block text-sm font-medium text-gray-700 mb-1">Comments</label
+          >
+          <textarea
+            id="comments"
+            name="comments"
+            rows="4"
+            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 resize-none"
+            placeholder="Send us a drawing, photo or blueprint."></textarea>
+        </div>
+
+        <!-- Subida de archivos -->
+        <div class="mb-6">
+          <label
+            for="fileUpload"
+            class="block text-sm font-medium text-gray-700 mb-1">File:</label
+          >
+          <input
+            type="file"
+            id="fileUpload"
+            name="fileUpload"
+            class="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-gray-500 file:text-white hover:file:bg-yellow-600"
+            accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
+          />
+          <p class="text-xs text-gray-500 mt-1">Max file size: 4GB</p>
+        </div>
+      </div>
+    </form>
+
+    <!-- Botón de envío -->
+    <div class="text-center">
+      <a
+        href="./estimate"
+        class="inline-flex items-center justify-center px-4 py-2 mb-16 rounded-full font-semibold
+          bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-200
+          border border-yellow-500 shadow
+          hover:from-yellow-400 hover:to-yellow-100 transition duration-300
+          text-black whitespace-nowrap text-sm sm:text-base lg:text-[0.95rem] xl:text-[0.9rem] 2xl:text-[0.85rem]"
+      >
+        Request an Estimate
+      </a>
+    </div>
+  </div>
+</section>

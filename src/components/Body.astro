@@ -1,0 +1,121 @@
+---
+
+---
+
+
+
+<div
+  id="banner"
+  class="relative h-[90vh] w-full bg-fixed bg-center bg-cover overflow-hidden"
+  style="background-image: url('/home-banner-img.webp');"
+>
+  <!-- Capa oscura -->
+  <div
+    id="overlay"
+    class="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 pointer-events-none z-0"
+  >
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="relative z-10 h-full flex flex-col justify-between px-8 py-10">
+    <!-- Título centrado verticalmente, alineado a la izquierda -->
+    <div class="flex items-center h-full">
+      <h1
+        class="text-white text-[2rem] sm:text-[3rem] md:text-[3rem] font-bold leading-tight mt-24"
+      >
+        Request an Estimate
+      </h1>
+    </div>
+
+    <!-- Línea blanca más abajo -->
+    <div class="w-full h-px bg-white mb-6"></div>
+
+    <!-- Footer con íconos, casi al fondo -->
+    <div
+      class="flex justify-between items-end text-white text-sm sm:text-base mb-4"
+    >
+      <!-- Redes sociales -->
+      <div class="flex space-x-4">
+        <!-- Yelp -->
+        <a href="#" class="hover:text-yellow-300" aria-label="Yelp">
+          
+            <img src="/x.png" class="w-6 h-6" >
+          
+        </a>
+        <!-- Instagram -->
+        <a href="#" class="hover:text-yellow-300" aria-label="Yelp">
+          
+            <img src="/Inst.png" class="w-6 h-6" >
+          
+        </a>
+        <!-- Houzz -->
+        <a href="#" class="hover:text-yellow-300" aria-label="Yelp">
+          
+            <img src="/h.png" class="w-6 h-6" >
+          
+        </a>
+      </div>
+
+      <!-- Contacto -->
+      <div class="flex flex-col items-end space-y-2 text-right">
+        <div class="flex items-center space-x-2">
+          <svg
+            class="w-5 h-5 text-yellow-300"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M3 5h18M3 12h18M3 19h18"></path>
+          </svg>
+          <span>(925) 827-3000</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg
+            class="w-5 h-5 text-yellow-300"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M16 12H8m0 0l4-4m-4 4l4 4"></path>
+          </svg>
+          <span>info@palazzokb.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.getElementById('banner')!;
+    const overlay = document.getElementById('overlay')!;
+    
+    // Configuración inicial
+    let scale = 1;
+    let opacity = 0;
+    
+    // Función para manejar el scroll
+    function handleScroll() {
+      // Calcular el progreso del scroll (0 a 1)
+      const scrollY = window.scrollY;
+      const bannerHeight = banner.offsetHeight;
+      const scrollProgress = Math.min(scrollY / bannerHeight, 1);
+      
+      // Aplicar zoom al fondo (de 1x a 1.5x)
+      scale = 1 + (scrollProgress * 0.5);
+      banner.style.backgroundSize = `${scale * 100}%`;
+      
+      // Aplicar oscurecimiento (de 0 a 1.5, limitado a 1)
+      opacity = Math.min(scrollProgress * 1.5, 1);
+      overlay.style.opacity = opacity.toString();
+    }
+    
+    // Escuchar el evento de scroll
+    window.addEventListener('scroll', handleScroll);
+    
+    // Inicializar
+    handleScroll();
+  });
+</script>

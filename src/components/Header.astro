@@ -1,0 +1,237 @@
+---
+import "../styles/global.css"; // Asegúrate de que este archivo existe y contiene @tailwind base/components/utilities
+---
+
+<script defer>
+  // Toggle mobile menu
+  function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  }
+
+  // Toggle services dropdown
+  function toggleDropdown() {
+    document.getElementById("servicesDropdown").classList.toggle("hidden");
+  }
+</script>
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+<body class="bg-black text-white">
+  <header class="w-full shadow-md fixed bg-black z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img
+          src="/blacklogo.png"
+          alt="Logo"
+          class="h-24 w-auto max-w-[200px]"
+        />
+      </a>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex space-x-6 items-center">
+        <a href="./about" class="hover:text-yellow-200 font-medium">About</a>
+
+        <!-- Services Dropdown -->
+        <div class="relative">
+          <button
+            onclick="toggleDropdown('servicesDropdown')"
+            class="flex items-center hover:text-yellow-200 font-medium"
+          >
+            Services
+            <svg
+              class="ml-1 w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div
+            id="servicesDropdown"
+            class="absolute top-full left-0 mt-2 bg-gray-900 shadow-lg rounded-md p-4 flex space-x-4 hidden z-10"
+          >
+            <div
+              class="w-32 text-center text-sm hover:text-yellow-200 cursor-pointer"
+            >
+              Service 1
+            </div>
+            <div
+              class="w-32 text-center text-sm hover:text-yellow-200 cursor-pointer"
+            >
+              Service 2
+            </div>
+            <div
+              class="w-32 text-center text-sm hover:text-yellow-200 cursor-pointer"
+            >
+              Service 3
+            </div>
+          </div>
+        </div>
+
+        <a href="./cambria" class="hover:text-yellow-200 font-medium">Cambria</a
+        >
+        <a href="./products" class="hover:text-yellow-200 font-medium"
+          >Products</a
+        >
+
+        <!-- Portfolio Dropdown -->
+        <div class="relative">
+          <button
+            onclick="toggleDropdown('portfolioDropdown')"
+            class="flex items-center hover:text-yellow-200 font-medium"
+          >
+            Portfolio
+            <svg
+              class="ml-1 w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div
+            id="portfolioDropdown"
+            class="absolute top-full left-0 mt-2 bg-gray-900 shadow-lg rounded-md p-4 flex space-x-4 hidden z-10"
+          >
+            <div
+              class="w-32 text-center text-sm hover:text-yellow-200 cursor-pointer"
+            >
+              Gallery
+            </div>
+            <div
+              class="w-32 text-center text-sm hover:text-yellow-200 cursor-pointer"
+            >
+              Projects
+            </div>
+            <div
+              class="w-32 text-center text-sm hover:text-yellow-200 cursor-pointer"
+            >
+              Testimonials
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="./contact us"
+          class="hover:text-yellow-200 font-medium whitespace-nowrap text-sm sm:text-base lg:text-[0.95rem] xl:text-[0.9rem] 2xl:text-[0.85rem]"
+          >Contact Us</a
+        >
+
+        <!-- Estimate Button -->
+        <a
+          href="./estimate"
+          class="inline-flex items-center justify-center px-4 py-2 rounded-full font-semibold
+          bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-200
+          border border-yellow-500 shadow
+          hover:from-yellow-400 hover:to-yellow-100 transition duration-300
+          text-black whitespace-nowrap text-sm sm:text-base lg:text-[0.95rem] xl:text-[0.9rem] 2xl:text-[0.85rem]"
+        >
+          Request an Estimate
+          <svg
+            class="ml-2 w-4 h-4 md:w-5 md:h-5 text-black"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 19L19 5M5 5h14v14"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <!-- Mobile Hamburger -->
+      <button
+        onclick="toggleMenu()"
+        class="md:hidden text-white focus:outline-none"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden px-4 pb-4 hidden">
+      <a href="./about" class="block py-2 hover:text-yellow-200">About</a>
+
+      <!-- Services Mobile -->
+      <button
+        onclick="toggleDropdown('servicesDropdownMobile')"
+        class="w-full text-left py-2 flex items-center hover:text-yellow-200"
+      >
+        Services
+        <svg
+          class="ml-1 w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="servicesDropdownMobile" class="pl-4 space-y-2 hidden">
+        <div class="text-sm hover:text-yellow-200">Service 1</div>
+        <div class="text-sm hover:text-yellow-200">Service 2</div>
+        <div class="text-sm hover:text-yellow-200">Service 3</div>
+      </div>
+
+      <a href="./cambria" class="block py-2 hover:text-yellow-200">Cambria</a>
+      <a href="./products" class="block py-2 hover:text-yellow-200">Products</a>
+
+      <!-- Portfolio Mobile -->
+      <button
+        onclick="toggleDropdown('portfolioDropdownMobile')"
+        class="w-full text-left py-2 flex items-center hover:text-yellow-200"
+      >
+        Portfolio
+        <svg
+          class="ml-1 w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="portfolioDropdownMobile" class="pl-4 space-y-2 hidden">
+        <div class="text-sm hover:text-yellow-200">Gallery</div>
+        <div class="text-sm hover:text-yellow-200">Projects</div>
+        <div class="text-sm hover:text-yellow-200">Testimonials</div>
+      </div>
+
+      <a href="./contact us" class="block py-2 hover:text-yellow-200"
+        >Contact Us</a
+      >
+      <a
+        href="./estimate"
+        class="block mt-2 text-black px-6 py-2 rounded-full font-semibold
+          bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-200
+          border border-yellow-500 shadow
+          hover:from-yellow-400 hover:to-yellow-100 transition duration-300
+          text-sm sm:text-base md:text-lg whitespace-nowrap text-center inline-flex items-center justify-center"
+      >
+        Request an Estimate
+        <svg
+          class="ml-2 w-4 h-4 md:w-5 md:h-5 text-black"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="M5 19L19 5M5 5h14v14"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</body>
