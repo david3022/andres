@@ -2,12 +2,9 @@
 
 ---
 
-
-
 <div
   id="banner"
-  class="relative h-[90vh] w-full bg-fixed bg-center bg-cover overflow-hidden"
-  style="background-image: url('/home-banner-img.webp');"
+  class="relative h-[90vh] w-full sm:bg-fixed bg-center bg-cover overflow-hidden bg-[url('/home-banner-img.webp')] bg-no-repeat"
 >
   <!-- Capa oscura -->
   <div
@@ -30,34 +27,27 @@
     <!-- Línea blanca más abajo -->
     <div class="w-full h-px bg-white mb-6"></div>
 
-    <!-- Footer con íconos, casi al fondo -->
+    <!-- Footer con íconos, responsive -->
     <div
-      class="flex justify-between items-end text-white text-sm sm:text-base mb-4"
+      class="flex flex-col sm:flex-row justify-between items-start sm:items-end text-white text-sm sm:text-base mb-4 space-y-6 sm:space-y-0"
     >
       <!-- Redes sociales -->
       <div class="flex space-x-4">
-        <!-- Yelp -->
         <a href="#" class="hover:text-yellow-300" aria-label="Yelp">
-          
-            <img src="/x.png" class="w-6 h-6" >
-          
+          <img src="/x.png" class="w-6 h-6" />
         </a>
-        <!-- Instagram -->
-        <a href="#" class="hover:text-yellow-300" aria-label="Yelp">
-          
-            <img src="/Inst.png" class="w-6 h-6" >
-          
+        <a href="#" class="hover:text-yellow-300" aria-label="Instagram">
+          <img src="/Inst.png" class="w-6 h-6" />
         </a>
-        <!-- Houzz -->
-        <a href="#" class="hover:text-yellow-300" aria-label="Yelp">
-          
-            <img src="/h.png" class="w-6 h-6" >
-          
+        <a href="#" class="hover:text-yellow-300" aria-label="Houzz">
+          <img src="/h.png" class="w-6 h-6" />
         </a>
       </div>
 
       <!-- Contacto -->
-      <div class="flex flex-col items-end space-y-2 text-right">
+      <div
+        class="flex flex-col items-start sm:items-end space-y-2 text-left sm:text-right"
+      >
         <div class="flex items-center space-x-2">
           <svg
             class="w-5 h-5 text-yellow-300"
@@ -88,33 +78,38 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const banner = document.getElementById('banner')!;
-    const overlay = document.getElementById('overlay')!;
-    
+  document.addEventListener("DOMContentLoaded", function () {
+    const banner = document.getElementById("banner")!;
+    const overlay = document.getElementById("overlay")!;
+
     // Configuración inicial
     let scale = 1;
     let opacity = 0;
-    
+
     // Función para manejar el scroll
     function handleScroll() {
       // Calcular el progreso del scroll (0 a 1)
       const scrollY = window.scrollY;
       const bannerHeight = banner.offsetHeight;
       const scrollProgress = Math.min(scrollY / bannerHeight, 1);
-      
+
+      if (window.innerWidth >= 640) {
+        const scale = 1 + scrollProgress * 0.5;
+        banner.style.backgroundSize = `${scale * 100}%`;
+      }
+
       // Aplicar zoom al fondo (de 1x a 1.5x)
-      scale = 1 + (scrollProgress * 0.5);
+      scale = 1 + scrollProgress * 0.5;
       banner.style.backgroundSize = `${scale * 100}%`;
-      
+
       // Aplicar oscurecimiento (de 0 a 1.5, limitado a 1)
       opacity = Math.min(scrollProgress * 1.5, 1);
       overlay.style.opacity = opacity.toString();
     }
-    
+
     // Escuchar el evento de scroll
-    window.addEventListener('scroll', handleScroll);
-    
+    window.addEventListener("scroll", handleScroll);
+
     // Inicializar
     handleScroll();
   });
